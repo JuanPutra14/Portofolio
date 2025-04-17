@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Saya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  
+  <header class="bg-white shadow-md fixed top-0 w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-600">Portofolio</h1>
+      <nav class="space-x-4 text-sm sm:text-base">
+        <a href="#about" class="hover:text-indigo-600">Tentang</a>
+        <a href="#projects" class="hover:text-indigo-600">Projek</a>
+        <a href="#contact" class="hover:text-indigo-600">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  <section class="h-screen flex items-center justify-center text-center bg-gradient-to-b from-blue-200 to-indigo-500 text-white px-4 pt-24">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-5xl font-bold mb-4 animate-fade-in">Halo, Saya <span class="text-yellow-300">Juan Putra Omartio</span></h2>
+      <p class="text-lg sm:text-xl mb-8">Saya seorang Junior Web Developer yang sedang belajar Frontend & Backend</p>
+      <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold shadow-md hover:bg-indigo-100 transition">Lihat Projek</a>
+    </div>
+  </section>
+
+  
+  <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl sm:text-3xl font-bold text-indigo-600 mb-6">Tentang Saya</h3>
+      <p class="text-gray-700 text-base sm:text-lg leading-relaxed">Saya adalah siswa SMK 5 KOTA BEKASI yang tertarik pada pengembangan web. Saya menguasai HTML, Tailwind CSS, Express.js, Node.js , dan MySQL. Fokus saya adalah belajar menjadi developer profesional yang terus berkembang dan inovatif</p>
+    </div>
+  </section>
+
+  
+  <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-2xl sm:text-3xl font-bold text-indigo-600 text-center mb-12">Projek Saya</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:-translate-y-2 transition">
+          <h4 class="text-xl font-semibold mb-2">Website CRUD Items</h4>
+          <p class="text-gray-700">Aplikasi manajemen data items menggunakan Express.js, EJS, dan MySQL.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:-translate-y-2 transition">
+          <h4 class="text-xl font-semibold mb-2">Sistem Login & Register</h4>
+          <p class="text-gray-700">Autentikasi user tanpa bcrypt, menggunakan Express dan MySQL.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:-translate-y-2 transition">
+          <h4 class="text-xl font-semibold mb-2">Kalkulator</h4>
+          <p class="text-gray-700">Website kalkulator untuk menghitung menggunakan html dan tailwind css</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl sm:text-3xl font-bold text-indigo-600 mb-6">Hubungi Saya</h3>
+      <p class="text-gray-700 mb-4 text-base sm:text-lg">Email: jpomartio08@email.com</p>
+      <p class="text-gray-700 text-base sm:text-lg">Instagram: @jujuonee</p>
+    </div>
+  </section>
+
+  
+  <section class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-2xl sm:text-3xl font-bold text-indigo-600 mb-8 text-center">Kirim Pesan ke Saya</h3>
+      <form action="" method="POST"  class="grid grid-cols-1 gap-6">
+        <div>
+          <label class="block text-base font-medium text-gray-700 mb-2" for="name">Nama</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Masukkan nama kamu" />
+        </div>
+        <div>
+          <label class="block text-base font-medium text-gray-700 mb-2" for="email">Email</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="contoh@email.com" />
+        </div>
+        <div>
+          <label class="block text-base font-medium text-gray-700 mb-2" for="message">Pesan</label>
+          <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tulis pesanmu di sini..."></textarea>
+        </div>
+        <div class="text-center pt-4">
+          <button type="submit" class="w-full sm:w-auto bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Kirim Pesan</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  
+  <footer class="bg-indigo-600 text-white text-center py-4 text-sm">
+    &copy; 2025 Juan Putra Omartio. All rights reserved.
+  </footer>
+
+</body>
+</html>
