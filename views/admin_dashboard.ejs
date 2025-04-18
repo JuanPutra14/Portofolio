@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>ADMIN | DASHBOARD</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ADMIN | DASHBOARD</title>
 </head>
-<body>
-    <h1>DASHBOARD ADMIN</h1>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Judul -->
+    <h1 class="text-3xl sm:text-4xl font-bold text-center text-indigo-600 mb-8">Dashboard Admin</h1>
+
+    <!-- Form Pencarian -->
+    <form action="/admin/search/dashboard" method="get" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+      <input
+        type="text"
+        name="query"
+        id="query"
+        placeholder="Cari nama"
+        class="w-full sm:w-96 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      />
+      <button
+        type="submit"
+        class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition"
+      >
+        Cari
+      </button>
+    </form>
+
+    <!-- Tabel Data -->
+    <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+      <table class="min-w-full text-sm text-left">
+        <thead class="bg-indigo-600 text-white">
+          <tr>
+            <th class="px-6 py-3">ID</th>
+            <th class="px-6 py-3">Nama</th>
+            <th class="px-6 py-3">Email</th>
+            <th class="px-6 py-3">Pesan</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <% data.forEach(data => { %>
+            <tr class="hover:bg-gray-100">
+              <td class="px-6 py-4"><%= data.id %></td>
+              <td class="px-6 py-4"><%= data.nama %></td>
+              <td class="px-6 py-4"><%= data.email %></td>
+              <td class="px-6 py-4"><%= data.message %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-3 mt-8">
+      <% if (currentPage > 1) { %>
+        <a href="/admin/dashboard?page=<%= currentPage - 1 %>" class="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition">
+          Previous
+        </a>
+      <% } %>
+
+      <span class="px-4 py-2 bg-indigo-500 text-white rounded font-semibold"><%= currentPage %> / <%= totalPages %></span>
+
+      <% if (currentPage < totalPages) { %>
+        <a href="/admin/dashboard?page=<%= currentPage + 1 %>" class="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition">
+          Next
+        </a>
+      <% } %>
+    </div>
+  </div>
+
 </body>
 </html>
